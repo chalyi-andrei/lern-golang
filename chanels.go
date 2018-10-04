@@ -23,7 +23,6 @@ func main() {
 	fmt.Println("str", <-str)
 	fmt.Println("str", <-str)
 
-
 	// Synchronization
 	someChannel := make(chan bool, 1)
 
@@ -39,7 +38,7 @@ func main() {
 	}()
 
 	select {
-	case res:= <-c:
+	case res := <-c:
 		fmt.Println(res)
 	case <-time.After(time.Second * 3): // if we set 2 seconds, timeout will works
 		fmt.Println("timeout!")
